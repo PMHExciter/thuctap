@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 15, 2023 lúc 05:46 AM
+-- Thời gian đã tạo: Th2 15, 2023 lúc 03:07 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -170,7 +170,9 @@ INSERT INTO `products` (`id`, `name`, `description`, `content`, `hot`, `photo`, 
 (31, 'Nhẫn bạc nam đính đá PNJ Sliver 003', '', '', 1, '1675271739_snztxmw060006-nhan-nam-dinh-da-sythentic-pnjsilver-01.png', 680000, 5, 20),
 (32, 'Nhẫn bạc nam đính đá PNJ Sliver 002', '', '', 1, '1675271711_snzt00b000005-nhan-bac-nam-dinh-da-pnjsilver.png', 500000, 10, 20),
 (34, 'Nhẫn bạc nam đính đá PNJ Sliver 001', '', '', 0, '1675271691_snxmxmw060074-nhan-bac-dinh-da-pnjsilver.png', 530000, 0, 20),
-(35, 'Bông tai Bạch kim đính Kim cương PNJ', '', '', 1, '1676432800_pbdd00w060000-bong-tai-bach-kim-dinh-kim-cuong-pnj-01.png', 16000000, 5, 22);
+(35, 'Bông tai Bạch kim đính Kim cương PNJ', '', '', 1, '1676432800_pbdd00w060000-bong-tai-bach-kim-dinh-kim-cuong-pnj-01.png', 16000000, 5, 22),
+(36, 'Nhẫn Vàng 18K đính đá Citrine PNJ', '', '', 0, '1676468175_gnctxmy000460-nhan-vang-18k-dinh-da-citrine-pnj-1.png', 13456000, 0, 20),
+(37, 'Vòng tay Vàng trắng Ý 18K PNJ', '', '', 0, '1676468252_gv0000w000521-vong-tay-vang-trang-y-18k-pnj-01.png', 32000000, 0, 21);
 
 -- --------------------------------------------------------
 
@@ -296,7 +298,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `rating`

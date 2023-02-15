@@ -398,7 +398,7 @@ body{
 	margin-bottom: 10px;
 }
 .featured-products .container .owl-carousel{
-	//display: flex;
+	display: flex;
 }
 
 .featured-products .container .owl-carousel .product{
