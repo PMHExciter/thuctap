@@ -4,7 +4,7 @@
  ?>
 <div class="col-md-12">
     <div style="margin-bottom:5px;">
-        <a href="index.php?controller=products&action=create" class="btn btn-primary" style="background: pink; color: black;border:2px solid pink">Add category</a>
+        <a href="index.php?controller=products&action=create" class="btn btn-primary" style="background: pink; color: black;border:2px solid pink">Add product</a>
     </div>
     <div class="panel panel-primary" style="border:1px solid pink">
         <div class="panel-heading" style="background: pink;color: black;border:2px solid pink">List Products</div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th2 15, 2023 lúc 03:07 PM
+-- Thời gian đã tạo: Th3 22, 2023 lúc 05:06 PM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -30,18 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `parent_id` int(11) NOT NULL,
-  `name` varchar(500) NOT NULL,
-  `displayhomepage` int(11) NOT NULL
+  `name` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Đang đổ dữ liệu cho bảng `categories`
 --
 
-INSERT INTO `categories` (`id`, `parent_id`, `name`, `displayhomepage`) VALUES
-(20, 0, 'Nhẫn', 0),
-(21, 0, 'Vòng tay', 0),
-(22, 0, 'Bông tai', 0);
+INSERT INTO `categories` (`id`, `parent_id`, `name`) VALUES
+(20, 0, 'Nhẫn'),
+(21, 0, 'Vòng tay'),
+(22, 0, 'Bông tai');
 
 -- --------------------------------------------------------
 
@@ -66,7 +65,9 @@ INSERT INTO `customers` (`id`, `name`, `email`, `address`, `phone`, `password`) 
 (1, 'Nguyễn Văn A', 'nva@gmail.com', 'Hà Nội', '123456', '202cb962ac59075b964b07152d234b70'),
 (2, 'test', 'test@gmail.com', 'Hà Nội', '123456', '202cb962ac59075b964b07152d234b70'),
 (3, 'Nguyễn Văn E@', 'nve@gmail.com', 'Hà Nội', '123456', '202cb962ac59075b964b07152d234b70'),
-(0, 'Nguyễn Văn B', 'nvb@gmail.com', 'Hà nội', '123', '202cb962ac59075b964b07152d234b70');
+(0, 'Nguyễn Văn B', 'nvb@gmail.com', 'Hà nội', '123', '202cb962ac59075b964b07152d234b70'),
+(0, 'Dora', 'nvd@gmail.com', 'Hà Nội', '0123456987', '202cb962ac59075b964b07152d234b70'),
+(0, 'Phạm Minh Hoa', 'hoa@gmail.com', 'Hà Nội', '0123654789', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -114,7 +115,8 @@ CREATE TABLE `orderdetails` (
 
 INSERT INTO `orderdetails` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
 (24, 10, 27, 1, 6800000),
-(25, 11, 32, 1, 500000);
+(25, 11, 32, 1, 500000),
+(26, 12, 23, 1, 6666890);
 
 -- --------------------------------------------------------
 
@@ -135,8 +137,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `customer_id`, `date`, `price`, `status`) VALUES
-(10, 3, '2023-02-02', 6120000, 0),
-(11, 3, '2023-02-15', 450000, 0);
+(10, 3, '2023-02-02', 6120000, 1),
+(11, 3, '2023-02-15', 450000, 0),
+(12, 0, '2023-02-27', 6533550, 0);
 
 -- --------------------------------------------------------
 
@@ -167,12 +170,12 @@ INSERT INTO `products` (`id`, `name`, `description`, `content`, `hot`, `photo`, 
 (28, 'Vòng tay vàng trắng Ý 18k ', '', '', 0, '1675271960_gv0000w060409-vong-vang-trang-18k-pnj-1.png', 18000000, 3, 21),
 (29, 'Vòng tay Kim Tiền vàng Ý 18k ', '', '', 0, '1675271908_gv0000y060473-vong-tay-kim-tien-vang-y-18k-pnj-1.png', 21000000, 10, 21),
 (30, 'Vòng tay vàng Ý 18k ', '', '', 1, '1675271858_gv0000z060469-vong-tay-vang-y-18k-pnj-1.png', 23000000, 5, 21),
-(31, 'Nhẫn bạc nam đính đá PNJ Sliver 003', '', '', 1, '1675271739_snztxmw060006-nhan-nam-dinh-da-sythentic-pnjsilver-01.png', 680000, 5, 20),
-(32, 'Nhẫn bạc nam đính đá PNJ Sliver 002', '', '', 1, '1675271711_snzt00b000005-nhan-bac-nam-dinh-da-pnjsilver.png', 500000, 10, 20),
+(31, 'Nhẫn bạc nam đính đá PNJ Sliver 003', '<p><span style=\"font-size:11pt\"><span style=\"font-family:Calibri,sans-serif\"><span style=\"font-size:11.5pt\"><span style=\"background-color:white\"><span style=\"font-family:Roboto\"><span style=\"color:#464646\">N&eacute;t nổi bật v&agrave; thu h&uacute;t nhất tr&ecirc;n chiếc nhẫn ch&iacute;nh l&agrave; sự sắp xếp đầy tinh tế của những vi&ecirc;n đ&aacute;. V&agrave; để c&oacute; thế c&ugrave;ng lấp l&aacute;nh v&agrave; rực rỡ đồng bộ với sự tỏa s&aacute;ng của đ&aacute; th&igrave; cần phải kể đến chất liệu bạc Sterling cao cấp được nhập khẩu, gi&uacute;p cho nhẫn th&ecirc;m phần s&aacute;ng b&oacute;ng, sắc sảo hơn. PNJSilver đ&atilde; chọn lọc kĩ lưỡng những nguồn nguy&ecirc;n liệu chế t&aacute;c ph&ugrave; hợp nhất, tốt nhất đến c&aacute;c c&ocirc; g&aacute;i. Gửi gắm qua sản phẩm l&agrave; t&acirc;m huyết v&agrave; t&igrave;nh y&ecirc;u thương đến từ những người thợ l&agrave;nh nghề.</span></span></span></span></span></span></p>\r\n', '', 1, '1675271739_snztxmw060006-nhan-nam-dinh-da-sythentic-pnjsilver-01.png', 680000, 5, 20),
+(32, 'Nhẫn bạc nam đính đá PNJ Sliver 002', '<p><span style=\"font-size:12pt\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:10.5pt\"><span style=\"font-family:Roboto\"><span style=\"color:black\">Lấy &yacute; tưởng từ những đường cong tuyệt đẹp, PNJSilver cho ra mắt mẫu&nbsp;nhẫn bạc&nbsp;đ&iacute;nh đ&aacute; được thiết kế với đường cong &ocirc;m s&aacute;t một c&aacute;ch mềm mại v&agrave; được điểm xuyến bằng những vi&ecirc;n đ&aacute; m&agrave;u đen nam t&iacute;nh, tạo n&ecirc;n vẻ đẹp trẻ trung. Đ&acirc;y ch&iacute;nh l&agrave; mẫu trang sức được nhiều ch&agrave;ng trai ưa chuộng phong c&aacute;ch hiện đại.</span></span></span></span></span></span></p>\r\n\r\n<p><span style=\"font-size:12pt\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:10.5pt\"><span style=\"font-family:Roboto\"><span style=\"color:black\">Nhẫn bạc PNJSilver thuộc sở hữu thiết kế trẻ trung v&agrave; năng động với kiểu d&aacute;ng tr&ograve;n được điểm xuyến bằng những vi&ecirc;n đ&aacute; tạo n&ecirc;n vẻ đẹp tinh tế v&agrave; thời trang. . Với chiếc nhẫn bạc n&agrave;y, ch&agrave;ng c&oacute; thể &ldquo;sốc&rdquo; lại phong độ của m&igrave;nh để ph&aacute; vỡ giới hạn đ&atilde; n&iacute;u ch&acirc;n bấy l&acirc;u nay v&agrave; tiến đến một mối quan hệ mới trong tương lai.</span></span></span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 1, '1675271711_snzt00b000005-nhan-bac-nam-dinh-da-pnjsilver.png', 500000, 10, 20),
 (34, 'Nhẫn bạc nam đính đá PNJ Sliver 001', '', '', 0, '1675271691_snxmxmw060074-nhan-bac-dinh-da-pnjsilver.png', 530000, 0, 20),
-(35, 'Bông tai Bạch kim đính Kim cương PNJ', '', '', 1, '1676432800_pbdd00w060000-bong-tai-bach-kim-dinh-kim-cuong-pnj-01.png', 16000000, 5, 22),
-(36, 'Nhẫn Vàng 18K đính đá Citrine PNJ', '', '', 0, '1676468175_gnctxmy000460-nhan-vang-18k-dinh-da-citrine-pnj-1.png', 13456000, 0, 20),
-(37, 'Vòng tay Vàng trắng Ý 18K PNJ', '', '', 0, '1676468252_gv0000w000521-vong-tay-vang-trang-y-18k-pnj-01.png', 32000000, 0, 21);
+(35, 'Bông tai Bạch kim đính Kim cương PNJ', '<p><span style=\"font-size:12pt\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:10.5pt\"><span style=\"font-family:Roboto\"><span style=\"color:black\">Cuốn h&uacute;t đến từ sự thanh lịch, kim cương chưa bao giờ l&agrave; lỗi thời khi n&agrave;ng biết chọn cho m&igrave;nh những thiết kế độc đ&aacute;o, trẻ trung. Sở hữu thiết kế tinh xảo, trẻ trung,&nbsp;đ&ocirc;i b&ocirc;ng tai&nbsp;Kim cương PNJ kh&ocirc;ng chỉ bừng s&aacute;ng n&eacute;t thanh t&uacute;, rạng ngời của n&agrave;ng m&agrave; c&ograve;n l&agrave; m&oacute;n qu&agrave; mang &yacute; nghĩa vĩnh cửu.</span></span></span></span></span></span></p>\r\n\r\n<p><span style=\"font-size:12pt\"><span style=\"background-color:white\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\"><span style=\"font-size:10.5pt\"><span style=\"font-family:Roboto\"><span style=\"color:black\">B&ecirc;n cạnh đ&oacute;, &aacute;nh kim rực rỡ của bạch kim sẽ t&ocirc;n l&ecirc;n vẻ đẹp cổ điển của phụ nữ &Aacute; đ&ocirc;ng. N&agrave;ng đừng ngần ngại phối&nbsp;nữ trang đ&iacute;nh kim cương&nbsp;với những bộ c&aacute;nh dạ tiệc hay phục trang tối giản, đơn sắc để ho&agrave;n thiện vẻ ngo&agrave;i sang trọng của m&igrave;nh.</span></span></span></span></span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 1, '1676432800_pbdd00w060000-bong-tai-bach-kim-dinh-kim-cuong-pnj-01.png', 16000000, 5, 22),
+(36, 'Nhẫn Vàng 18K đính đá Citrine PNJ', '<p><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\">Nổi bật với sắc v&agrave;ng cam n&oacute;ng bỏng, đ&aacute; Citrine lu&ocirc;n mang vẻ đẹp rạng rỡ v&agrave; tỏa s&aacute;ng khi đeo tr&ecirc;n người. Chiếc&nbsp;nhẫn&nbsp;được chế t&aacute;c từ v&agrave;ng 18K c&ugrave;ng đ&aacute; Citrine, mang đến m&oacute;n trang sức sang trọng v&agrave; qu&yacute; ph&aacute;i cho qu&yacute; c&ocirc;. B&ecirc;n cạnh đ&oacute;,&nbsp;trang sức đ&aacute; Citrine&nbsp;cũng kh&aacute; ph&ugrave; hợp với nhiều lứa tuổi kh&aacute;c nhau, v&agrave; ngự trị tr&ecirc;n l&agrave;n da n&agrave;o cũng to&aacute;t l&ecirc;n được vẻ đẹp ri&ecirc;ng biệt.</span></span></p>\r\n\r\n<p><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\">Ngo&agrave;i ra, Citrine cũng mang nguồn năng lượng từ mặt trời n&ecirc;n n&oacute; mang lại sự t&iacute;ch cực cũng như gi&uacute;p cơ thể tr&agrave;n đầy sức sống.</span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 0, '1676468175_gnctxmy000460-nhan-vang-18k-dinh-da-citrine-pnj-1.png', 13456000, 0, 20),
+(37, 'Vòng tay Vàng trắng Ý 18K PNJ', '<p><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\">Chiếc&nbsp;v&ograve;ng tay PNJ&nbsp;sở hữu sự cứng c&aacute;p của v&agrave;ng &Yacute; 18K được chế t&aacute;c tinh xảo, kết hợp c&aacute;c chi tiết đ&uacute;c, ch&acirc;u v&agrave; khắc theo c&ocirc;ng nghệ&nbsp;trang sức &Yacute;, tạo n&ecirc;n sự s&aacute;ng b&oacute;ng v&agrave; sang trọng. Với thiết kế độc lạ c&ugrave;ng &aacute;nh kim sắc sảo, sản phẩm sẽ t&ocirc;n l&ecirc;n vẻ đẹp của c&aacute;c qu&yacute; c&ocirc;.</span></span></p>\r\n\r\n<p><span style=\"font-size:12pt\"><span style=\"font-family:&quot;Times New Roman&quot;,serif\">Th&ecirc;m v&agrave;o đ&oacute;, với thiết kế tinh xảo của v&ograve;ng tay, n&agrave;ng sẽ bất ngờ khi phối với c&aacute;c bộ trang phục như suit c&ocirc;ng sở hay những chiếc đầm dạo phố. Với c&aacute;c điểm nhấn tr&ecirc;n sản phẩm, PNJ tin rằng n&agrave;ng sẽ trở n&ecirc;n thật sự tỏa s&aacute;ng v&agrave; nổi bật khi trưng diện ch&uacute;ng.</span></span></p>\r\n\r\n<p>&nbsp;</p>\r\n', '', 0, '1676468252_gv0000w000521-vong-tay-vang-trang-y-18k-pnj-01.png', 32000000, 0, 21);
 
 -- --------------------------------------------------------
 
@@ -286,19 +289,19 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT cho bảng `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT cho bảng `rating`

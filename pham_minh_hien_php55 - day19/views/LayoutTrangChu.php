@@ -121,7 +121,7 @@
             <p class="title">SẢN PHẨM</p>
             <p><a href="index.php?controller=products&action=category&category_id=24">Nhẫn</a></p>
             <p><a href="index.php?controller=products&action=category&category_id=23">Dây Chuyền</a></p>
-            <p><a href="index.php?controller=products&action=category&category_id=22">Khuyên tai</a></p>
+            <p><a href="index.php?controller=products&action=category&category_id=22">Bông tai</a></p>
           </div><!-- End .protop1  -->
           <div class="protop2">
             <p class="title">CHÍNH SÁCH</p>
