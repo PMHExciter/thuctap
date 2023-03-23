@@ -26,7 +26,7 @@
             <input type="text" name="email" class="input-control" required>
           </div>
           <div class="form-group">
-            <label>Địa chỉ:</label>
+            <label>Địa chỉ:(Ghi cụ thể)</label>
             <input type="text" name="address" class="input-control">
           </div>
           <div class="form-group">
