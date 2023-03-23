@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th3 22, 2023 lúc 05:06 PM
+-- Thời gian đã tạo: Th3 23, 2023 lúc 06:01 AM
 -- Phiên bản máy phục vụ: 10.4.24-MariaDB
 -- Phiên bản PHP: 8.1.6
 
@@ -65,9 +65,10 @@ INSERT INTO `customers` (`id`, `name`, `email`, `address`, `phone`, `password`) 
 (1, 'Nguyễn Văn A', 'nva@gmail.com', 'Hà Nội', '123456', '202cb962ac59075b964b07152d234b70'),
 (2, 'test', 'test@gmail.com', 'Hà Nội', '123456', '202cb962ac59075b964b07152d234b70'),
 (3, 'Nguyễn Văn E@', 'nve@gmail.com', 'Hà Nội', '123456', '202cb962ac59075b964b07152d234b70'),
-(0, 'Nguyễn Văn B', 'nvb@gmail.com', 'Hà nội', '123', '202cb962ac59075b964b07152d234b70'),
-(0, 'Dora', 'nvd@gmail.com', 'Hà Nội', '0123456987', '202cb962ac59075b964b07152d234b70'),
-(0, 'Phạm Minh Hoa', 'hoa@gmail.com', 'Hà Nội', '0123654789', '202cb962ac59075b964b07152d234b70');
+(4, 'Nguyễn Văn B', 'nvb@gmail.com', 'Hà nội', '123', '202cb962ac59075b964b07152d234b70'),
+(5, 'Dora', 'nvd@gmail.com', 'Hà Nội', '0123456987', '202cb962ac59075b964b07152d234b70'),
+(6, 'Phạm Minh Hoa', 'hoa@gmail.com', 'Hà Nội', '0123654789', '202cb962ac59075b964b07152d234b70'),
+(7, 'Phạm Minh Hiển', 'nv1@gmail.com', 'số 100 đường cầu diễn,phường minh khai, quận bắc từ liêm, hà nội', '0123456789', '202cb962ac59075b964b07152d234b70');
 
 -- --------------------------------------------------------
 
@@ -116,7 +117,9 @@ CREATE TABLE `orderdetails` (
 INSERT INTO `orderdetails` (`id`, `order_id`, `product_id`, `quantity`, `price`) VALUES
 (24, 10, 27, 1, 6800000),
 (25, 11, 32, 1, 500000),
-(26, 12, 23, 1, 6666890);
+(26, 12, 23, 1, 6666890),
+(27, 13, 35, 1, 16000000),
+(28, 14, 30, 1, 23000000);
 
 -- --------------------------------------------------------
 
@@ -139,7 +142,7 @@ CREATE TABLE `orders` (
 INSERT INTO `orders` (`id`, `customer_id`, `date`, `price`, `status`) VALUES
 (10, 3, '2023-02-02', 6120000, 1),
 (11, 3, '2023-02-15', 450000, 0),
-(12, 0, '2023-02-27', 6533550, 0);
+(14, 7, '2023-03-23', 21850000, 0);
 
 -- --------------------------------------------------------
 
@@ -234,6 +237,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Chỉ mục cho bảng `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Chỉ mục cho bảng `news`
 --
 ALTER TABLE `news`
@@ -280,6 +289,12 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+-- AUTO_INCREMENT cho bảng `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
 -- AUTO_INCREMENT cho bảng `news`
 --
 ALTER TABLE `news`
@@ -289,13 +304,13 @@ ALTER TABLE `news`
 -- AUTO_INCREMENT cho bảng `orderdetails`
 --
 ALTER TABLE `orderdetails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
